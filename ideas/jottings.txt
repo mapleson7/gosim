@@ -1,0 +1,42 @@
+I need to make a state machine on the front end to sort out where we are in the program.
+
+Based on the user logged in, there will always be a Your Stable section. Which will have your horses. Your horses are saved in a back end database with al lthe required stats attached to itself. 
+
+Finances section which will be a desk.
+
+Training
+
+Vet/Medical and  (Level or hire a person at a certain level with certain stats)
+
+Farrier (Level)
+
+You can have an overview of all your horses, which will be the view of your stable. 
+
+
+-----
+
+I need a way to connect to the database from the frontend. 
+This will be through an exposed API. 
+
+You log in. And are authenticated from the database. 
+Which will then will default when you click on the frontend your stable. 
+The frontend fetch call to the api endpoint wil be tailored to your own username. 
+The logic on the backend then will do a search of all horses which are owned just by you.
+
+I can do an initial fetch call now which wil just get all horses. 
+
+I need to learn:
+1. How do send GET and POST requests through the Fetch API with my Javascript front end code, and attach that to buttons?
+2. How do I search the database with my GORM on the backend and return the horses?
+
+
+
+----
+-Horse Info
+-Horse Photo
+-Horse Stats
+-Horse Pedigree
+-Sale History
+-Race Record
+-Race History
+

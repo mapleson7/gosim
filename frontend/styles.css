@@ -1,0 +1,321 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  font-family: sans-serif;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  background-color: antiquewhite;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  width: 100%;
+  border-collapse: collapse; /* Eliminates space between borders */
+}
+
+th,
+td {
+  text-align: center;
+  padding: 8px;
+  border-bottom: 1px solid #ddd; /* Adds a light line under each row */
+}
+
+thead th {
+  background-color: #eaeaea;
+  color: #333;
+  font-weight: bold;
+}
+
+#top-bar {
+  display: flex;
+  justify-content: space-around;
+  gap: 5px;
+}
+
+#username-display {
+  padding: 0.4em 2em;
+  flex: 2;
+}
+
+#logo {
+  padding: 0.4em 2em;
+  flex: 12;
+}
+
+#live-feed {
+  padding: 0.4em 2em;
+  font-size: 1em;
+}
+
+#date-display {
+  padding: 0.4em 2em;
+  flex: 1;
+}
+
+.topbar-item {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.25em;
+
+  color: rgb(255, 245, 232);
+  background-color: rgb(46, 0, 0);
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+#main-container {
+  display: flex;
+  gap: 2px;
+  margin-top: 5px;
+  justify-content: center;
+}
+
+#main-container div {
+  border-radius: 4px;
+}
+
+#main-container table {
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 2.3em;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  text-align: center;
+  background: rgb(41, 39, 39);
+}
+
+#sectionA {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+#sectionA-top {
+  display: flex;
+  gap: 2px;
+}
+
+#horse-info {
+  padding: 2rem 1rem 0.4rem 1rem;
+}
+
+#horse-name {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding: 0.5em 0;
+  letter-spacing: 3px;
+  font-variant: small-caps;
+  font-size: 5em;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#horse-info-minor {
+  padding: 0.5em;
+  display: flex;
+  max-width: 500px;
+  margin: 1.5rem auto;
+  font-size: 1rem;
+  font-size: 20px;
+  background-color: rgb(73, 81, 81);
+}
+
+#horse-info2 {
+  padding: 3em 1em;
+  border: 2px solid rgb(89, 96, 95);
+  flex: 2;
+}
+
+#horse-info-minor > * {
+  flex: 1;
+  text-align: center;
+  color: antiquewhite;
+}
+
+#class-rank {
+  display: flex;
+  padding-top: 1em;
+  justify-content: space-around;
+  min-width: 200px;
+}
+
+#class-rank > * {
+  text-align: center;
+  padding: 1em;
+  border: 2px solid rgb(73, 81, 81);
+}
+
+#owner,
+#breeder {
+  text-align: center;
+  padding: 1em;
+  border: 2px solid rgb(73, 81, 81);
+}
+
+#horse-photo {
+  border: 2px solid black;
+}
+#horse-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: rgb(41, 39, 39);
+}
+#horse-stats > * {
+  flex: 1;
+  padding: 0.1em;
+}
+.stat-box {
+  background: url("/frontend/b.png");
+  background-color: rgba(51, 57, 57, 0.95);
+  background-position: 25%;
+  background-blend-mode: multiply;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.2rem;
+  margin: 2px;
+}
+
+.stat-box div {
+  flex: 1;
+}
+
+.stat-box div:nth-child(1) {
+  min-width: 55px;
+}
+.stat-box div:nth-child(2) {
+  min-width: 150px;
+}
+
+.stat-name {
+  padding: 1em;
+  flex: 1;
+}
+
+.stat-value {
+  padding-right: 1em;
+  font-size: 1.9em;
+}
+
+.stat-graphical {
+  display: flex;
+  border: 2px solid black;
+  border: 2px solid rgb(103, 96, 117);
+}
+
+#career-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
+  color: rgb(234, 227, 227);
+}
+
+#career-info .title {
+  flex: 1;
+  background: rgb(41, 39, 39);
+}
+
+#career-info div {
+  flex: 1.1;
+}
+
+#career-info div table {
+  background-color: rgb(47, 44, 44);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#career-info div table td {
+  padding: 1.8rem;
+  font-size: 1.2rem;
+}
+
+#horse-career-stats {
+  flex: 0.1;
+}
+
+.horse-career-stat-row {
+  background: url("/frontend/b.png");
+  background-color: rgba(51, 57, 57, 0.95);
+  background-position: 25%;
+  background-blend-mode: multiply;
+}
+
+#pedigree-title {
+  font-size: 1.1rem;
+  padding-left: 1rem;
+  text-transform: uppercase;
+  background-color: rgb(19, 18, 18);
+  color: antiquewhite;
+}
+
+#horse-pedigree {
+  display: flex;
+  height: 400px;
+  color: rgb(19, 18, 18);
+}
+
+#horse-sales-history {
+  padding: 10px;
+  border: 2px solid black;
+  flex: 1;
+}
+#horse-top-siblings {
+  padding: 10px;
+  border: 2px solid black;
+  flex: 2;
+}
+
+#sectionB {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+#sectionB .title {
+  font-size: 1rem;
+}
+
+#horse-race-history {
+  width: 1000px;
+  margin: 0 auto;
+}
