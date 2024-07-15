@@ -7,6 +7,7 @@ import (
 )
 
 type Horse struct {
+	
 	gorm.Model
 	Name              string
 	Sex               string
@@ -17,7 +18,7 @@ type Horse struct {
 	Acceleration      float32
 	Stamina           float32
 	Consistency       float32
-	Fitness           int
+	Health           int
 	TalentType        string
 	TalentRarity      string
 	BreedingPotential int
