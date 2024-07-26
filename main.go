@@ -3,6 +3,7 @@ package main
 import (
 	"main/controllers"
 	"main/initializers"
+	"main/models"
 
 	"github.com/gin-gonic/gin"
 )
@@ -13,6 +14,9 @@ func init() {
 }
 
 func main() {
+	initializers.DB.AutoMigrate(&models.Horse{})
+	//models.CreateSourceHorses()
+
 	r := gin.Default()
 
 	r.Static("/frontend", "./frontend")
@@ -22,19 +26,29 @@ func main() {
 	})
 
 	r.GET("/horses", func(c *gin.Context) {
-		type Horse struct {
-			Name string `json:"name"`
-			Age  int    `json:"age"`
-			Coat string `json:"coat"`
+		name := c.Query("name")
+		id := c.Query("id")
+
+		var horse models.Horse
+
+		if name != "" {
+			result := initializers.DB.Where("name = ?", name).First(&horse)
+			if result.Error != nil {
+				c.JSON(500, gin.H{"error": "Failed to fetch horse"})
+				return
+			}
 		}
 
-		horses := []Horse{
-			{"Dancer", 2, "chestnut"},
-			{"Bingo", 8, "bay"},
-			{"Pharlap", 4, "grey"},
+		if id != "" {
+			result := initializers.DB.First(&horse, id)
+			if result.Error != nil {
+				c.JSON(500, gin.H{"error": "Failed to fetch horse"})
+				return
+			}
 		}
 
-		c.JSON(200, horses)
+		c.JSON(200, &horse)
+
 	})
 
 	r.POST("/horses", controllers.HorseCreate)

@@ -35,8 +35,32 @@ I need to learn:
 -Horse Info
 -Horse Photo
 -Horse Stats
+-Horse Stats Graph
+
 -Horse Pedigree
 -Sale History
 -Race Record
 -Race History
+
+background: url("/frontend/b.png");
+
+
+
+Im hooking into the horse object ive retrieve fro the DB
+CONTINUE doing it.. in script.js frontend code. 
+name etc. get rid of all placeholder.
+
+
+
+----------
+So bare minimum I want to have users, horses, source horses, starter horses.
+
+I will start with a user model for the DB. (With just the bare minimum and add features as I go)
+At this point in time, I think I'll need: username, horses,
+
+
+
+
+
+
 
