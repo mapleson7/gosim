@@ -16,7 +16,7 @@ func init() {
 func main() {
 	initializers.DB.AutoMigrate(&models.Horse{})
 	//models.CreateSourceHorses()
-
+	models.CreateStarterHorse()
 	r := gin.Default()
 
 	r.Static("/frontend", "./frontend")

@@ -1,6 +1,7 @@
 package models
 
 import (
+	"fmt"
 	"main/constants"
 	"main/initializers"
 	"math/rand"
@@ -32,6 +33,11 @@ type Horse struct {
 	BreedingType       string
 	Rating             int
 	SourceHorse        bool
+	StarterHorse       bool
+	SireID             *uint
+	Sire               *Horse
+	DamID              *uint
+	Dam                *Horse
 }
 
 func CreateSourceHorses() {
@@ -63,10 +69,46 @@ func CreateSourceHorses() {
 			BreedingType:       constants.BreedingType[rand.Intn(len(constants.BreedingType))],
 			Rating:             0,
 			SourceHorse:        true,
+			StarterHorse:       false,
 		}
 
 		sourceHorses = append(sourceHorses, sourceHorse)
 
 	}
 	initializers.DB.Create(&sourceHorses)
+}
+
+func CreateStarterHorse() {
+	selectedHorses, err := getRandomSourceHorses(4)
+
+	if err != nil {
+		fmt.Print(err)
+	}
+
+	for index, horse := range selectedHorses {
+		fmt.Println(index+1, horse.Name)
+
+	}
+
+}
+
+func getRandomSourceHorses(num int) ([]Horse, error) {
+	var sourceHorses []Horse
+
+	// Select four source horses at random.
+	result := initializers.DB.Where("source_horse = ?", true).Find(&sourceHorses)
+
+	if result.Error != nil {
+		fmt.Println("Failed to find Source Horses", result.Error)
+		return nil, result.Error
+	}
+
+	// Shuffle the slice of source horses
+	rand.Shuffle(len(sourceHorses), func(i, j int) {
+		sourceHorses[i], sourceHorses[j] = sourceHorses[j], sourceHorses[i]
+	})
+
+	selectedHorses := sourceHorses[:num]
+
+	return selectedHorses, nil
 }

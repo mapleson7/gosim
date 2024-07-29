@@ -1,0 +1,7 @@
+Current Goal:
+What i want to do is fill the local database with Source Horses.
+These are the horses which all Starter Horses are born from.
+I need them on the database as they will provide the gene pool for starter horses to breed with.
+
+I should write a function which will populate the DB with source horses.
+This function will create the source horses with random stats.
