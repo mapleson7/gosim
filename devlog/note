@@ -1,0 +1,34 @@
+i need to start off the day with some goal.
+
+I think i should work on the backend.
+
+i dont have toi have a frntend yet to represent it.
+
+But what i want to acheive is this:
+
+I want to have 10 users in the db, each with their 5 starter horses.
+
+all bred from the source horses I have.
+
+Then I can update the source horses frontend page to dispaly the actual info i want dispalyed for them -- Progeny eg.
+
+In order to do this i need:
+
+User models Y
+
+Create a CreateStarterHorse fucntion
+this func should create a new horse, based on a random dams breeding with source horses and there foals breeding.
+
+--
+
+1. We will need to select 4 different source horses at random out of all of them.
+
+2. Create a random Mare#1
+
+3. breed SourceHorse#1 with Mare#1 which creates Mare#2
+
+4. breed SourceHorse#2 with Mare#2 which creates Mare#3
+
+5. breed SourceHorse#3 with Mare#3 which creates Mare#4
+
+6. breed SourceHorse#4 with Mare#4 which creates StarterHorse of Either Sex.
